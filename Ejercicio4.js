@@ -19,13 +19,17 @@ function countVocals(text){
     let char;
     let state;
     let count=0;
+    let vocals = [];
     for(let key=0; key<text.length; key++){
         char = text.charAt(key);
         state = isVocal(char);
-        if(state === 1) count++;
+        if(state === 1){
+            count++;
+            vocals.push(char);
+        } 
     }
-    return count;
+    console.log(`Número de vocales: ${count} Vocales: ${vocals}`);
 }
 
-let numVocals = countVocals('Pedro Gonzales');
-console.log(numVocals);
+countVocals('Pedro Gonzales');
+//console.log(numVocals);
